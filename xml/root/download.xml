@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 
 <!DOCTYPE document SYSTEM '../../common/dtd/ow2.dtd' [
-<!ENTITY mindcVersion "2.0" >
+<!ENTITY mindcVersion "2.2" >
+<!ENTITY mindtoolsVersion "1.0-SNAPSHOT" >
+<!ENTITY mindtoolssetupVersion "20150219" >
+<!ENTITY mindedVersion "0.8.5" >
+ 
 ]>
 
 <document>
@@ -14,11 +18,96 @@
   </properties>
 
   <body>
-    <s1 name="Getting the mindc tool-chain">
+  	<s1 name="Getting the &quot;all-in-one&quot; standalone installer (for Windows)">
+  		
+  		<s2 name="Stable releases">
+  			<p>The latest release of the "all-in-one" installer includes:</p>
+  			<ul>
+  				<li>mind-tools &mindtoolsVersion;</li>
+  				<li>MindEd &mindedVersion; (current release - no graphical edition - based on Eclipse C/C++ IDE for Luna SR2, see <a href="http://www.eclipse.org/">http://www.eclipse.org</a>)</li>
+  				<li>GraphViz 2.28.0 (see <a href="http://www.graphviz.org/">http://www.graphviz.org</a>)</li>
+  				<li>Python 2.7.2 (see <a href="https://www.python.org/">https://www.python.org</a>)</li>
+  				<li>PyGTK all-in-one 2.24.0 (see <a href="http://www.pygtk.org">http://www.pygtk.org</a>)</li>
+  				<li>Oracle JDK 8u31 (see <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Oracle Java SE Development Kit 8 Downloads</a>).</li>
+  			</ul>
+  			<p>
+  			We do not own the dependency packages and do not claim ownership on them.
+  			When downloading this package, you accept all their respective licences:
+  			</p>
+  			<ul>
+  				<li><a href="http://www.graphviz.org/License.php">GraphViz License</a></li>
+  				<li><a href="https://docs.python.org/2/license.html">Python 2 License</a></li>
+  				<li><a href="http://www.pygtk.org/about.html">PyGTK About - &quot;Under a Free license&quot; section</a></li>
+  				<li><a href="http://www.oracle.com/technetwork/java/javase/terms/license/index.html">Oracle Binary Code License Agreement for Java SE</a></li>
+  			</ul>
+  			<p>Binary package:</p>
+  			<ul>
+  				<li><a href="http://mind.ow2.org/all-in-one-installer/mind-tools-setup-&mindtoolssetupVersion;.exe">mind-tools-setup-&mindtoolssetupVersion;.exe</a></li>
+  			</ul>
+  		</s2>
+  	</s1>
+  	
+    <s1 name="Getting the mind-tools package (any platform)">
     
       <s2 name="Stable releases">
 	  
-	    <p>The latest stable release of the mindc tool-chain is &mindcVersion; :</p>
+		<p>The latest stable release of the <strong>mind-tools</strong> toolset (not including MindEd) is &mindtoolsVersion; :</p>
+        <ul>
+          <li>Binary packages :
+            <ul>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-bin.tar.bz2">mind-tools-&mindtoolsVersion;-bin.tar.bz2</a></li>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-bin.tar.gz">mind-tools-&mindtoolsVersion;-bin.tar.gz</a></li>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-bin.zip">mind-tools-&mindtoolsVersion;-bin.zip</a></li>
+            </ul>
+          </li>
+          <li>Source packages :
+            <ul>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-src.tar.bz2">mind-tools-&mindtoolsVersion;-src.tar.bz2</a></li>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-src.tar.gz">mind-tools-&mindtoolsVersion;-src.tar.gz</a></li>
+              <li><a href="http://download.forge.objectweb.org/mind/mind-tools-&mindtoolsVersion;-src.zip">mind-tools-&mindtoolsVersion;-src.zip</a></li>
+            </ul>
+          </li>
+        </ul>
+      </s2>
+      
+      <s2 name="Development builds (SNAPSHOT builds)">
+        <p>The latest build packages of the <strong>mind-tools "all-in-one" toolset</strong> are available on the 
+          <a href="http://bamboo.ow2.org/browse/MIND-MIND02">continuous-integration server</a>.
+          Binary package is available in the <em>Artifacts</em>
+          section of each build.</p>
+          
+        <p>Link to latest development build artifacts :</p>
+        <ul>
+          <li><a href="http://bamboo.ow2.org/browse/MIND-MIND02/latest/artifact">Binary packages</a></li>
+        </ul>
+        
+      </s2>
+      
+      <s2 name="Getting the sources">
+        <p>You can visit the
+          <a href="http://forge.ow2.org/docman/view.php/375/258/MIND_development_process.pdf">MIND development process document</a>
+          for instructions on how to get the sources from 
+          <a href="https://github.com/MIND-Tools">GitHub MIND-Tools organization</a>.</p>
+
+		<p>The <strong>mind-tools "all-in-one" toolset</strong> (split in different repositories on GitHub) 
+          is built with <a href="http://maven.apache.org/">Maven</a>.
+          It is not self-contained, but the <code>mind-tools-release-scripts</code> use
+          the Android Repo tool to clone all necessary repositories according to the manifest
+          in <code>mind-tools-release-manifest</code>, and the Maven <code>mind-tool</code> 
+          multimodule / aggregator project. 
+          The <code>mind-tools-release-scripts</code> should do everything directly.
+          See the <code>README.txt</code> file in the sources for
+          build instructions.
+          <br/><br/>
+        </p>
+      </s2>
+    </s1>
+    
+    <s1 name="Getting the mindc tool-chain (any platform)">
+    
+      <s2 name="Stable releases">
+	  
+	    <p>The latest stable release of the <strong>mindc core tool-chain</strong> is &mindcVersion; :</p>
         <ul>
           <li>Binary packages :
             <ul>
@@ -36,7 +125,7 @@
           </li>
         </ul>
 
-        <p>Previous stable releases of the mindc tool-chain are available on the 
+        <p>Previous stable releases of the <strong>mindc tool-chain</strong> are available on the 
           <a href="http://forge.ow2.org/project/showfiles.php?group_id=375">File
           section of the MIND Forge</a>.</p>
         <p>The tool-chain requires a Java virtual machine (version 1.5 or above)
@@ -44,13 +133,13 @@
       </s2>
 
       <s2 name="Unstable releases (alpha or beta releases)">
-        <p>Alpha or beta releases of the mindc tool-chain are available on the 
+        <p>Alpha or beta releases of the <strong>mindc tool-chain</strong> are available on the 
           <a href="http://forge.ow2.org/project/showfiles.php?group_id=375">File
           section of the MIND Forge</a>.</p>
       </s2>
       
       <s2 name="Development builds (SNAPSHOT builds)">
-        <p>The latest build packages of the mindc tool-chain are available on the 
+        <p>The latest build packages of the <strong>mindc tool-chain</strong> are available on the 
           <a href="http://bamboo.ow2.org/browse/MIND-MINDC">continuous-integration server</a>.
           Binary and source packages are available in the <em>Artifacts</em>
           section of each build.</p>
@@ -68,11 +157,13 @@
           for instructions on how to get the sources from 
           <a href="https://github.com/MIND-Tools">GitHub MIND-Tools organization</a>.</p>
 
-        <p>The mindc tool-chain (in <code>mindc</code> repository on GitHub) 
+        <p>The <strong>mindc tool-chain</strong> (in <code>mindc</code> repository on GitHub) 
           is built with <a href="http://maven.apache.org/">Maven</a>.
           It is self-contained, which means that you can check it out and build
           it directly. See the <code>README.txt</code> file in the sources for
-          build instructions.</p>
+          build instructions.
+          <br/><br/>
+        </p>
       </s2>
     </s1>
     
@@ -83,11 +174,31 @@
             <p>Releases of MindEd plug-ins are available on the 
             <a href="http://forge.ow2.org/project/showfiles.php?group_id=375">File
             section of the MIND Forge</a>.<br/><br/>
-            <strong>MindEd 0.2.1</strong> (latest release)</p>
+            </p>
+            
+            <p>
+            	<strong>MindEd 0.8.5</strong> (current release - no graphical edition)
+            </p>
             <ul>
-            <li><a href="http://download.forge.objectweb.org/mind/Installation_Guide_MindEd_0.2.1.pdf">Installation Guide</a></li>
-            <li>Update Site : <code>http://mind.ow2.org/mindEd-site</code></li>
-            <li><a href="http://download.forge.objectweb.org/mind/mindEd-0.2.1.zip"> Archived update-site</a></li>
+            	<li><a href="">MIND4SE Full Installation Guide</a></li>
+            	<li>Update Site : <code>http://mind.ow2.org/mindEd-site</code></li>
+            </ul>
+            
+            <p>
+            	<strong>MindEd 0.8.5</strong> (prototype release - with graphical edition)
+            </p>
+            <ul>
+            	<li><a href="">MIND4SE Full Installation Guide</a></li>
+            	<li>Update Site : <code>http://mind.ow2.org/mindEd-site-devel</code></li>
+            </ul>
+            
+            <p>
+            	<strong>MindEd 0.2.1</strong> (previous release)
+            </p>
+            <ul>
+            	<li><a href="http://download.forge.objectweb.org/mind/Installation_Guide_MindEd_0.2.1.pdf">Installation Guide</a></li>
+            	<li>Update Site : <code>http://mind.ow2.org/mindEd-site-old</code></li>
+            	<li><a href="http://download.forge.objectweb.org/mind/mindEd-0.2.1.zip"> Archived update-site</a></li>
             </ul>
         </s2>
         

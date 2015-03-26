@@ -13,8 +13,49 @@
   <body>
     <s1 name="The MIND Project">
 
+      <s2 name="Project Description">
+
+        <p>
+          <strong>
+            MIND is an implementation of the
+            <a href="http://fractal.ow2.org">Fractal</a>
+            component model for the development of embedded software.
+          </strong>
+        </p>
+        <p>
+          The core project provides: 
+          <ul>
+          	<li><strong>Mindc</strong>, an architecture compilation tool-chain</li>
+          	<li><strong>MindEd</strong>, an Eclipse CDT-based Integrated Development Environment (with ADL and ITF editors)</li>
+          	<li>A basic components <strong>library</strong></li>
+          </ul>
+          The mind-tools all-in-one package provides additional tools and plugins:
+          <ul>
+          	<li>An <strong>Optimization backend</strong> to generate smaller and faster code</li>
+          	<li>A simple <strong>stylesheet system</strong> (global-extensions) for non-intrusive annotations propagation</li>
+          	<li>A GraphViz' Dot (.gv) generator for <strong>architectural visualization</strong> (click to navigate, and opens source elements in Eclipse)</li>
+          	<li><strong>Mindot viewer</strong> for the generated .gv files (requires Python 2.7, PyGTK-all-in-one 2.24.0, GraphViz >= 2.28)</li>
+          	<li><strong>MindUnit</strong>, a unit tests framework / frontend (requires CUnit 2.1-2, source delivered "as is" with the examples)</li>
+          	<li><strong>IAR</strong> compiler/linker family support (CLI wrapper plugin)</li>
+          	<li><strong>VxWorks Diab</strong> compiler/linker family support (CLI wrapper plugin)</li>
+          	<li><strong>MindC++</strong> for C++ support and generation (using a simple component-class mapping)</li>
+          	<li>Binutils-based <strong>Dependency Tools</strong> for Design Structure Matrices (DSM) generation and link-time Bindings by-passing detection</li>
+          	<li><strong>Generic</strong> third-party compiler support helpers</li>
+          	<li>Latest MindEd-ready <strong>examples</strong></li>
+          	<li><strong>Mind Visual Diff</strong> for temporal and structural architecture comparison (open dot/gv output with Mindot Viewer)</li>
+          	<li>Simple C Macro Generator for <strong>static code analysis</strong> (Klocwork, Scanbuild...) and improved Eclipse C support</li>
+          	<li><strong>JSON Generator</strong> serializing architecture in a d3.js-friendly format for modern visualization (see <a href ="http://d3js.org">d3js.org</a>)</li>
+          	<li>Tools <strong>documentation</strong></li>
+          </ul>
+        </p>
+
+      </s2>
+
       <s2 name="News">
 
+		<p>
+          <strong>Mar. 27, 2015</strong> : <connect href="download.xml">mind-tools 1.0-SNAPSHOT all-in-one package</connect> released !
+        </p>
         <p>
           <strong>Jan. 16, 2013</strong> : <connect href="download.xml">mindc tool-chain 2.0</connect> released !
         </p>
@@ -47,20 +88,6 @@
         </p>
         <p>
           <strong>Jan. 20, 2010</strong> : The MIND OW2 project is now available !
-        </p>
-
-      </s2>
-
-      <s2 name="Project Description">
-
-        <p>
-          <strong>
-            MIND is an implementation of the
-            <a href="http://fractal.ow2.org">Fractal</a>
-            component model for the development of embedded softwares
-          </strong>
-          It provides an architecture compilation tool-chain, a component
-          library and an integrated development environment based on Eclipse.
         </p>
 
       </s2>
